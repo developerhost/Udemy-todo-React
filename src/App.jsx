@@ -47,7 +47,12 @@ export const App = () => {
         todoText={todoText}
         onChange={onChangeTodoText}
         onClick={onClickAdd}
+        disabled={incompleteTodos.length >= 3}
       />
+      {incompleteTodos.length >= 3 && (
+        <p style={{ color: "red" }}>登録できるtodo5個まで</p>
+      )}
+
       <IncompleteTodos
         todos={incompleteTodos}
         onClickComplete={onClickComplete}
